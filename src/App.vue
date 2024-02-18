@@ -1,10 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+</script>
 
-<template>
-  <h2>Hello World</h2>
-</template>
+<template><RouterView /></template>
 
-<style scoped>
-@media (min-width: 1024px) {
-}
-</style>
+<style scoped></style>
