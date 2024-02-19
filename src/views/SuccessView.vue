@@ -28,7 +28,7 @@ const onClick = () => {
       >
         Congratulations!
       </h1>
-      <p class="text-3xl font-extrabold">You completed the form.</p>
+      <p class="text-3xl font-extrabold">You've completed the form.</p>
 
       <Button @click="onClick">Back to Home</Button>
     </div>

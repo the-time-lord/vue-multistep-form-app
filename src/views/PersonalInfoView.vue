@@ -15,7 +15,7 @@ const { firstName, lastName, country } = storeToRefs(prospectDataStore)
   <AppStep title="Tell us about yourself">
     <div class="grid col-auto grid-cols-2 gap-6 w-full">
       <InputWithLabel name="firstName" label="First name" placeholder="John" v-model="firstName" />
-      <InputWithLabel name="lastName" label="Second name" placeholder="Doe" v-model="lastName" />
+      <InputWithLabel name="lastName" label="Last name" placeholder="Doe" v-model="lastName" />
       <AppSelect
         id="countries"
         label="Country"

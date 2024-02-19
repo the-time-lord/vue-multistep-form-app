@@ -5,12 +5,12 @@ import { Button } from '@/components/ui/button'
 import { useRouter, useRoute } from 'vue-router'
 import { Form } from '@/components/ui/form'
 import { appSteps } from '@/mocks/steps'
+import { computed } from 'vue'
 
 const router = useRouter()
 const route = useRoute()
 
 const goToNextRoute = () => {
-  console.log('Route name', route.name)
   const index = appSteps.indexOf(route.name)
 
   if (appSteps[index + 1]) {
@@ -18,10 +18,12 @@ const goToNextRoute = () => {
   }
 }
 
+const btnText = computed(() => (route.name === 'Summary' ? 'Submit' : 'Next'))
+
 const onSubmit = () => goToNextRoute()
 
 interface Props {
-  title: string
+  title?: string
 }
 
 const props = defineProps<Props>()
@@ -34,7 +36,7 @@ const props = defineProps<Props>()
       <h1 class="text-2xl font-semibold">{{ props.title }}</h1>
 
       <slot></slot>
-      <Button class="mx-4 w-full" type="submit">Next</Button>
+      <Button class="mx-4 w-full" type="submit">{{ btnText }}</Button>
     </Form>
   </MainLayout>
 </template>

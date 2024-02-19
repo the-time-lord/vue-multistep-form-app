@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import('../views/PersonalInfoView.vue')
     },
     {
+      path: '/steps/summary',
+      name: 'Summary',
+      component: () => import('../views/SummaryView.vue')
+    },
+    {
       path: '/success',
       name: 'Success',
       component: () => import('../views/SuccessView.vue')

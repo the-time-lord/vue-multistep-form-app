@@ -3,9 +3,7 @@ export enum WakeUpPreferenceEnum {
   NIGHT_OWL = 'night-owl'
 }
 
-export enum CountryEnum {
-  Germany = 'DE',
-  Switzerland = 'CH',
-  France = 'FR',
-  UnitedKingdom = 'GB'
+export const sleeperType = {
+  'early-bird': 'Early bird',
+  'night-owl': 'Night owl'
 }

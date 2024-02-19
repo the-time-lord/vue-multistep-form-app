@@ -1,1 +1,1 @@
-export const appSteps = ['WakeUp', 'PersonalInfo', 'Success']
+export const appSteps = ['WakeUp', 'PersonalInfo', 'Summary', 'Success']
