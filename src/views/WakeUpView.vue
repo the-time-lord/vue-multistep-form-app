@@ -4,14 +4,17 @@ import AppStep from '@/layouts/AppStep.vue'
 import { useProspectDataStore } from '@/stores/prospectData'
 import { storeToRefs } from 'pinia'
 import { WakeUpPreferenceEnum } from '@/types'
+import { computed } from 'vue'
 
 const prospectDataStore = useProspectDataStore()
 
 const { wakeUpPreference } = storeToRefs(prospectDataStore)
+
+const isValid = computed(() => !!wakeUpPreference.value)
 </script>
 
 <template>
-  <AppStep title="When do you prefer to wake up?">
+  <AppStep title="When do you prefer to wake up?" :btn-disabled="!isValid">
     <div class="grid grid-cols-2 gap-6 w-full">
       <CardWithIcon
         icon-name="IconSun"

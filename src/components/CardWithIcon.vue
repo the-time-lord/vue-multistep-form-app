@@ -15,7 +15,7 @@ const props = defineProps<Props>()
   <Card
     class="pt-6 w-full max-w-[350px] cursor-pointer bg-gray-100 hover:bg-gray-200 hover:border-gray-400"
     :class="
-      props.selected && 'bg-purple-100 border-purple-600 shadow-[0_0_0_4px_rgba(147,51,234,0.4)]'
+      props.selected && 'bg-purple-50 border-purple-600 shadow-[0_0_0_4px_rgba(147,51,234,0.4)]'
     "
   >
     <CardContent class="flex flex-col items-center font-medium gap-4">

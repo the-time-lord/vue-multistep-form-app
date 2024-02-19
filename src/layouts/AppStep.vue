@@ -10,7 +10,15 @@ import { computed } from 'vue'
 const router = useRouter()
 const route = useRoute()
 
+interface Props {
+  title?: string
+  btnDisabled?: boolean
+}
+
+const props = defineProps<Props>()
+
 const goToNextRoute = () => {
+  //@ts-ignore
   const index = appSteps.indexOf(route.name)
 
   if (appSteps[index + 1]) {
@@ -21,12 +29,6 @@ const goToNextRoute = () => {
 const btnText = computed(() => (route.name === 'Summary' ? 'Submit' : 'Next'))
 
 const onSubmit = () => goToNextRoute()
-
-interface Props {
-  title?: string
-}
-
-const props = defineProps<Props>()
 </script>
 
 <template>
@@ -34,9 +36,8 @@ const props = defineProps<Props>()
     <ButtonBack @click="() => router.back()" />
     <Form class="flex flex-col justify-center items-center gap-10 px-4 h-full" @submit="onSubmit">
       <h1 class="text-2xl font-semibold">{{ props.title }}</h1>
-
       <slot></slot>
-      <Button class="mx-4 w-full" type="submit">{{ btnText }}</Button>
+      <Button class="mx-4 w-full" type="submit" :disabled="props.btnDisabled">{{ btnText }}</Button>
     </Form>
   </MainLayout>
 </template>
