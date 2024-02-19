@@ -6,13 +6,23 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: HomeView
     },
     {
-      path: '/steps',
-      name: 'steps',
+      path: '/steps/wakeup',
+      name: 'WakeUp',
+      component: () => import('../views/WakeUpView.vue')
+    },
+    {
+      path: '/steps/personalinfo',
+      name: 'PersonalInfo',
       component: () => import('../views/PersonalInfoView.vue')
+    },
+    {
+      path: '/success',
+      name: 'Success',
+      component: () => import('../views/SuccessView.vue')
     }
   ]
 })
