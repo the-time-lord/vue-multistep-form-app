@@ -8,7 +8,7 @@ const route = useRoute()
 
 const onClick = () =>
   router.push({
-    name: 'steps',
+    name: 'WakeUp',
     query: {
       ...route.query
     }
