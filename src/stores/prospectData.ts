@@ -8,5 +8,12 @@ export const useProspectDataStore = defineStore('prospectData', () => {
   const lastName = ref('')
   const country = ref('')
 
-  return { wakeUpPreference, firstName, lastName, country }
+  const reset = () => {
+    wakeUpPreference.value = undefined
+    firstName.value = ''
+    lastName.value = ''
+    country.value = ''
+  }
+
+  return { wakeUpPreference, firstName, lastName, country, reset }
 })

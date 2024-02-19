@@ -4,17 +4,21 @@ import MainLayout from './MainLayout.vue'
 import { Button } from '@/components/ui/button'
 import { useRouter, useRoute } from 'vue-router'
 import { Form } from '@/components/ui/form'
+import { appSteps } from '@/mocks/steps'
 
 const router = useRouter()
 const route = useRoute()
 
-const onSubmit = () =>
-  router.push({
-    name: 'PersonalInfo',
-    query: {
-      ...route.query
-    }
-  })
+const goToNextRoute = () => {
+  console.log('Route name', route.name)
+  const index = appSteps.indexOf(route.name)
+
+  if (appSteps[index + 1]) {
+    router.push({ name: appSteps[index + 1] })
+  }
+}
+
+const onSubmit = () => goToNextRoute()
 
 interface Props {
   title: string

@@ -2,17 +2,22 @@
 import MainLayout from '@/layouts/MainLayout.vue'
 import { Button } from '@/components/ui/button'
 import { useRouter, useRoute } from 'vue-router'
+import { useProspectDataStore } from '@/stores/prospectData'
 
 const router = useRouter()
 const route = useRoute()
 
-const onClick = () =>
+const prospectDataStore = useProspectDataStore()
+
+const onClick = () => {
+  prospectDataStore.reset()
   router.push({
     name: 'Home',
     query: {
       ...route.query
     }
   })
+}
 </script>
 
 <template>
