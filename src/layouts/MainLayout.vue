@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AppHeader from '@/components/AppHeader.vue'
-import ButtonBack from '@/components/ButtonBack.vue'
 </script>
 
 <template>

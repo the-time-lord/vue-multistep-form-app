@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import IconChevronLeft from './icons/IconChevronLeft.vue'
 import { Button } from '@/components/ui/button'
-
-const emit = defineEmits<{
-  (e: 'change', id: number): void
-  (e: 'update', value: string): void
-}>()
 </script>
 
 <template>
